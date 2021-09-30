@@ -179,6 +179,7 @@ TARGET_RECOVERY_DEVICE_MODULES += \
     libicui18n \
     libicuuc \
     libion \
+    libandroidicu \
     libpcrecpp \
     libprocinfo \
     libxml2
