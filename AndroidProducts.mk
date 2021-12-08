@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_racer.mk
+    $(LOCAL_DIR)/twrp_racer.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_racer-user \
-    omni_racer-userdebug \
-    omni_racer-eng
+    twrp_racer-user \
+    twrp_racer-userdebug \
+    twrp_racer-eng
