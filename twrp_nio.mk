@@ -17,7 +17,7 @@
 # Only the below variable(s) need to be changed!
 #
 # Define hardware platform
-PRODUCT_PLATFORM := lito
+PRODUCT_PLATFORM := kona
 
 #
 #

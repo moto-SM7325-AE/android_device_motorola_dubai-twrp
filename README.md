@@ -27,7 +27,7 @@ See /prebuilt/README.md
 ```sh
 . build/envsetup.sh
 export LC_ALL=C
-lunch omni_racer-eng
+lunch omni_nio-eng
 make -j4 recoveryimage
 ```
 

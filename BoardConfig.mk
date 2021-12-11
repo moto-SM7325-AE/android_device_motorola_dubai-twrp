@@ -23,20 +23,19 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-PLATFORM_PATH := device/motorola/racer
+PLATFORM_PATH := device/motorola/nio
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := lito
+TARGET_BOOTLOADER_BOARD_NAME := kona
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
 # Platform
-TARGET_BOARD_PLATFORM := lito
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno620
+TARGET_BOARD_PLATFORM := kona
 TARGET_USES_64_BIT_BINDER := true
 TARGET_SUPPORTS_64_BIT_APPS := true
 BUILD_BROKEN_DUP_RULES := true
-QCOM_BOARD_PLATFORMS += lito
+QCOM_BOARD_PLATFORMS += kona
 
 # Architecture
 TARGET_ARCH := arm64
@@ -86,7 +85,7 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_CONFIG := vendor/racer_recovery_defconfig
+TARGET_KERNEL_CONFIG := vendor/nio_recovery_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/sm7250
 TARGET_KERNEL_ADDITIONAL_FLAGS += \
     DTC_PREBUILT=true \

@@ -15,9 +15,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_racer.mk
+    $(LOCAL_DIR)/twrp_nio.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_racer-user \
-    twrp_racer-userdebug \
-    twrp_racer-eng
+    twrp_nio-user \
+    twrp_nio-userdebug \
+    twrp_nio-eng

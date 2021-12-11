@@ -19,7 +19,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
 # define hardware platform
-PRODUCT_PLATFORM := lito
+PRODUCT_PLATFORM := kona
 
 # A/B support
 AB_OTA_UPDATER := true
