@@ -23,7 +23,7 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-ifneq ($(filter nio, $(TARGET_DEVICE)),)
+ifeq ($(TARGET_DEVICE),nio)
 
 LOCAL_PATH := $(call my-dir)
 
