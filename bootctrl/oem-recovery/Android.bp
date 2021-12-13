@@ -14,6 +14,12 @@
 // limitations under the License.
 //
 
+cc_library_headers {
+    name: "librecovery_updater_kernel_headers.nio",
+    export_include_dirs: ["kernel_headers"],
+    recovery_available: true,
+    vendor_available: true,
+}
 
 cc_library {
     name: "librecovery_updater.nio",
@@ -34,4 +40,5 @@ cc_library {
     ],
     owner: "qti",
     export_include_dirs: ["."],
+    header_libs: ["librecovery_updater_kernel_headers.nio"],
 }
