@@ -18,22 +18,6 @@
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 
-# A/B support
-AB_OTA_UPDATER := true
-
-# A/B updater updatable partitions list. Keep in sync with the partition list
-# with "_a" and "_b" variants in the device. Note that the vendor can add more
-# more partitions to this list for the bootloader and radio.
-AB_OTA_PARTITIONS += \
-    boot \
-    dtbo \
-    product \
-    recovery \
-    system \
-    vbmeta \
-    vbmeta_system \
-    vendor
-
 PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
