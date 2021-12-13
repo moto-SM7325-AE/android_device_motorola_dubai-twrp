@@ -150,9 +150,6 @@ TW_INCLUDE_CRYPTO := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 BOARD_USES_METADATA_PARTITION := true
 
-# Extras
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
 TW_HAS_EDL_MODE := true
 
 # Asian region languages
