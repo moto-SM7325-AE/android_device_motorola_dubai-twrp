@@ -76,6 +76,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/fstab.qcom
 
 # A/B device flags
 AB_OTA_UPDATER := true
