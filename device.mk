@@ -59,4 +59,5 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31 \
-    vendor.gatekeeper.disable_spu=true
+    vendor.gatekeeper.disable_spu=true \
+    vendor.usb.controller=a600000.dwc3
