@@ -17,6 +17,7 @@
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 PRODUCT_PACKAGES += \
     update_engine_sideload
