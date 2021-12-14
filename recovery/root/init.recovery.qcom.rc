@@ -27,9 +27,6 @@
 
 import /init.recovery.qcom_decrypt.rc
 
-on early-init
-    start fstab_fixup
-
 on boot
     start health-hal-2-1
 
@@ -40,10 +37,3 @@ on fs
 
 on post-fs
     start boot-hal-1-1
-
-service fstab_fixup /system/bin/fstab_fixup.sh
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
