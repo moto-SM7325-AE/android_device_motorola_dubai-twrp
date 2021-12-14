@@ -19,6 +19,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
+PRODUCT_SHIPPING_API_LEVEL := 30
+
 PRODUCT_PACKAGES += \
     update_engine_sideload
 
