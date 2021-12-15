@@ -133,8 +133,8 @@ TW_HAS_EDL_MODE := true
 TW_EXTRA_LANGUAGES := true
 
 # Notch Offset
-TW_Y_OFFSET := 89
-TW_H_OFFSET := -89
+TW_Y_OFFSET := 115
+TW_H_OFFSET := -115
 
 # Debug flags
 TWRP_INCLUDE_LOGCAT := true
