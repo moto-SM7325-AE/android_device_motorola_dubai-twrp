@@ -30,10 +30,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl-qti.recovery \
     android.hardware.boot@1.1-service
 
-# Apex libraries
-PRODUCT_HOST_PACKAGES += \
-    libandroidicu
-
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
