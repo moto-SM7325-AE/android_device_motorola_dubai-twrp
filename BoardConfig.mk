@@ -1,5 +1,6 @@
 #
 # Copyright 2021 The Android Open Source Project
+# Copyright 2022 The TeamWin Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,27 +24,27 @@
 # *not* include it on all devices, so it is safe even with hardware-specific
 # components.
 
-DEVICE_PATH := device/motorola/nio
-
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := kona
-TARGET_NO_BOOTLOADER := true
+DEVICE_PATH := device/$(PRODUCT_BRAND)/$(PRODUCT_DEVICE)
 
 # Platform
-TARGET_BOARD_PLATFORM := kona
+TARGET_BOARD_PLATFORM := lahaina
+
+# Bootloader
+TARGET_BOOTLOADER_BOARD_NAME := $(TARGET_BOARD_PLATFORM)
+TARGET_NO_BOOTLOADER := true
 
 # Architecture
 TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a
+TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := cortex-a76
+TARGET_CPU_VARIANT := generic
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-a
+TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a76
+TARGET_2ND_CPU_VARIANT := cortex-a75
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
@@ -55,10 +56,16 @@ BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xa900
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
 
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_PREBUILT_DTBIMAGE_DIR := $(DEVICE_PATH)/prebuilt
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)/prebuilt/*.ko)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+  TARGET_KERNEL_CONFIG := lineage_dubai_defconfig
+  TARGET_KERNEL_CLANG_COMPILE := true
+  TARGET_KERNEL_SOURCE := kernel/motorola/sm8350
+  BOARD_KERNEL_SEPARATED_DTBO := true
+endif
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x06000000
@@ -71,11 +78,10 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
-TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/fstab.qcom
 
 # A/B device flags

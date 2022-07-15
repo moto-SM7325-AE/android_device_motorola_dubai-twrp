@@ -1,5 +1,6 @@
 #
 # Copyright 2020 The Android Open Source Project
+# Copyright 2022 The TeamWin Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -54,7 +55,7 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
 
 # Apex libraries
 PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/nio/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so
+    $(OUT_DIR)/target/product/dubai/obj/SHARED_LIBRARIES/libandroidicu_intermediates/libandroidicu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libandroidicu.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.build.security_patch=2099-12-31 \

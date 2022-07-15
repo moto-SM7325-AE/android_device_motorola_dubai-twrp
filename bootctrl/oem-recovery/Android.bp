@@ -15,14 +15,14 @@
 //
 
 cc_library_headers {
-    name: "librecovery_updater_kernel_headers.nio",
+    name: "librecovery_updater_kernel_headers.dubai",
     export_include_dirs: ["kernel_headers"],
     recovery_available: true,
     vendor_available: true,
 }
 
 cc_library {
-    name: "librecovery_updater.nio",
+    name: "librecovery_updater.dubai",
     vendor: true,
     recovery_available: true,
     shared_libs: [
@@ -40,5 +40,5 @@ cc_library {
     ],
     owner: "qti",
     export_include_dirs: ["."],
-    header_libs: ["librecovery_updater_kernel_headers.nio"],
+    header_libs: ["librecovery_updater_kernel_headers.dubai"],
 }
